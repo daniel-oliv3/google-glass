@@ -1,0 +1,31 @@
+<!DOCTYPE html> <!-- documento html-->
+<html lang="pt-br"> <!-- -->
+<head> <!-- cabeçalho do site -->
+    <meta charset="UTF-8"> <!-- charset="utf-8" para acentuação grafica-->
+    <title>Teste Java Script</title> <!-- titulo da pagina-->
+    <script> <!-- passando parametro / codigo javascript-->
+        var quebrada = false; <!-- essa variavel vai servir como base para um maquina de estado, "conseito tecnico avançado" variavel quebrada vai indicar se a lampada estar quebrada ou não. isso vai fazer com que quando ela quebre não realize nenhuma atividade, permanaça quebrada. "lampada". dentro da função muda-lampada.-->
+        function mudaLampada(tipo) { <!-- chamada da função, mudaLampada(nome-parametro "tipo")-->
+			if(tipo == 1){ <!-- tipo 1, lampada acesa.-->
+				arquivo = "_imagens/lampada-acesa.jpg"; <!-- -->
+			}
+			if(tipo == 2){ <!-- tipo 2 lampada apagada.-->
+				arquivo = "_imagens/lampada-apagada.jpg"; <!-- -->
+			}
+			if(tipo == 3){ <!-- tipo 3 lampada apagada.-->
+				arquivo = "_imagens/lampada-quebrada.jpg";
+			}
+			if(!quebrada){ <!-- se,(não-quebrda)faça -->
+				document.getElementById("luz").src = arquivo; <!-- -->
+				if(tipo == 3){ <!-- se(tipo for igual a 3) faça... não ira mais alterar a foto . "depois que quebra a lampada"-->
+					quebrada = true; <!-- -->
+				}
+			}
+		}	
+    </script> <!-- fechamento do script-->
+</head> <!-- -->
+<body> <!-- corpo do site -->
+    <h1>Acenda a lâmpada</h1> <!-- -->
+    <img src="_imagens/lampada-apagada.jpg" id="luz" onmousemove="mudaLampada(1)" onmouseout="mudaLampada(2)" onclick="mudaLampada(3)"/> <!-- fazer com com que a função passe parametros para função principal. parametros são valores que podem ser passado do codigo principal para uma determinada função, ela vai reagir conforme os valores passados. -->
+</body> <!-- fechamento do corpo do site -->
+</html> <!-- -->

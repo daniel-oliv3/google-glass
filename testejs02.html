@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br"> <!-- -->
+<head>
+    <meta charset="UTF-8">
+    <title>Teste Java Script</title>
+    <meta charset="utf-8"/>
+    <script> <!-- area de script #ativar eventos de interação atraves de objetos html-->
+        function acendeLampada() { <!--função, nome da função -> acendeLampada -->
+            document.getElementById("luz").src ="_imagens/lampada-acesa.jpg"; <!-- para manipular objetos atraves do id .getElementById ele vai pegar um elemento pelo id, quando passar o mouse por cima vai fazer a troca da imagem --><!-- comando alert() dispara um aviso visual-->
+
+        }
+        function apagaLampada() { <!--função para apagar a lampada quando o mouse sair de cima da imagem -->
+            document.getElementById("luz").src ="_imagens/lampada-apagada.jpg";
+        }
+        function quebraLampada() { <!-- função que vai quebrar a lambada quando for clicado com o mouse. -->
+            document.getElementById("luz").src ="_imagens/lampada-quebrada.jpg";
+        }
+
+    </script>
+</head>
+<body>
+    <h1>Acenda a lâmpada</h1>
+    <img src="_imagens/lampada-apagada.jpg" id="luz" onmousemove="acendeLampada()" onmouseout="apagaLampada()" onclick="quebraLampada()"/>
+</body>
+</html>
+
+<!-- onclick vai fazer a chamada para "acendeLampada"-->
+<!-- onmouseout e o evento, quando tira o mouse de cima do objeto, nesse caso vai fazer a chamada do "apagaLampada".-->
+<!-- onmousemove quando o mouse se move por cima do objeto ele ativa a função, nesse caso acende a lampada-->
+<!-- uma função e um conjunto de comandos ou tecnicamente uma rotina que vai acontecer caso a sequencia seja disparada. -->
+<!-- tudo que estiver dentro de (...) - parentese são parâmetros  #script -->
+<!-- tudo que estiver dentro de {...} - colchetes são códigos #script -->

@@ -1,0 +1,17 @@
+@charset "UTF-8";  
+
+section#conteudo { /*sessão conteudo*/
+    width: 1000px; /*largura, 1000pixel*/
+    margin: auto; /*margem automatica, o conteudo vai ficar centralizado na tela indepentende do espaço que ele ocupe*/
+}
+iframe#frame-spec { /* configuração "formatação" do frame ... id frame-spec*/
+    width: 400px; /*largura, tamanho da tela lateral em especificaçoes.*/
+    height: 280px; /*altura: 280 pixel;*/
+    border: none; /*removendo a borda*/
+    overflow: hidden; /*remover a visualização do conteudo, vai evitar que a rolagem aconteça "barra lateral"*/
+
+}
+
+iframe#frame-spec::-webkit-scrollbar {
+    display: none; /*para esconder as barras de rolagem */
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Tudo sobre Google Glass</title>
+    <link rel="stylesheet" href="_css/estilo.css"/>
+	<link rel="stylesheet" href="_css/form.css"/>
+	<script languagem ="JavaScript" src="_javascript/funcoes.js"></script>
+	<script>
+		function calc_total(){
+			var qtd = parseInt(document.getElementById('cQtd').value);
+			tot = qtd * 1500;
+			document.getElementById('cTot').value = tot;
+		}
+	</script>
+</head>
+
+<body>
+<div id="interface">
+
+    <header id="cabecalho">
+        <hgroup>
+            <h1>Google Glass</h1>
+            <h2>A revolução do Google está chegando</h2>
+        </hgroup>
+
+        <img id="icone" src="_imagens/contato.png">
+        <nav id="menu">
+            <h1>Menu Principal</h1>
+            <ul type="disc">
+                <li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="index.html">Home</a></li>
+                <li onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="_imagens/contato.png')"><a href="specs.html">Especificações</a></li>
+                <li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fotos.html">Fotos</a></li>
+                <li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="multimidia.html">Multimídia</a></li>
+                <li onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fale-conosco.html">Fale conosco</a></li>
+            </ul>
+        </nav>
+    </header>
+	
+	<section id="corpo-full">
+		<article id="noticia-principal">
+		<header id="cabecalho-artigo">
+		<hgroup>
+			<h3>Fale Conosco > Contato</h3>
+			<h1>Formulário de Contato</h1>
+			<h2>por Daniel Oliveira</h2>
+			<h3>Atualizado em 03/Agosto/2016</h3>
+		</hgroup>
+	
+
+<form method="post" id="fContato" action="mailto:danielsapup3@gmail.com" oninput="calc_total();"> <!-- formularios --><!-- parametro metodo. 2 valores, get e post, ..... url, get mais velos porem menos seguro ele vai pegar todos os dalos do seu formulario , post lento porem mais seguro .....pacotes --><!-- action e para aonde os dados são enviados.--><!-- metodo mailto: tem um grande problema, voce tem que ter um cliente de email. instalado na sua maquina... windows: outlook. mac: mail. uma das maneiras mais utilizadas para funcionar com formularios e os dados digitados serem tratados de forma correta e utilizar outra linguagem de programação do lado do servidor PHP.--><!-- oninput quando digitar alguma coisa ele vai disparar um evento -->
+<fieldset id="usuario"> <!-- conjunto de campos --> <!-- fildset vai criar uma borda, legend e o titulo em cima da borda -->
+<legend>Identificação do Usuário</legend>
+    <p><label for="cNome">Nome: </label> 
+	<input type="text" name="tNome" id="cNome" size="20" maxlength="30" placeholder="Nome Completo"/></p> <!-- input: objeto para o campo nome, aonde vai escrever......a tag input não tem fechamento, para caixa de texto,, text.. todo campo de formulario vai ter que ter um nome, e um id "identificador" name e o nome do objeto, -->
+    <p><label for="cSenha">Senha: </label>
+	<input type="password" name="tSenha" id="cSenha" size="8" maxlength="8" placeholder="8 Dígitos"</p>
+    <p><label for="cMail">E-mail: </label>
+	<input type="email" name="eMail" id="cMail" size="20" maxlength="40"</p>
+    <fieldset id="sexo"><legend>Sexo</legend>
+        <input type="radio" name="tSexo" id="cMasc" checked/> <label for="cMasc">Masculino</label><br/>
+        <input type="radio" name="tSexo" id="cFem"/> <label for="cFem">Feminino</label></fieldset> <!-- label para clicar no texto e marcar a bolinha, idel para dispositivos moveis.-->
+    <p><label for="cNasc">Data de Nascimento: </label> 
+	<input type="date" name="tNasc" id="cNasc"</p>
+</fieldset>	
+
+<fieldset id="endereco">
+<legend>Endereço do Usuário</legend>
+    <p><label for="cRua">Logradouro: </label>
+	<input type="text" name="tRua" id="cRua" size="13" maxlength="80" placeholder="Rua, Av, trav, ..."/></p>
+    <p><label for="cNum">Número: </label>
+	<input type="number" name="tNum" id="cNum" min="0" max="99999"/></p> <!-- min e o minimo valor que vai ser aceito, max o numero maximo.-->
+    <p><label for="cEst">Estado:</label>
+	<select name="tEst" id="cEst"> <!-- objeto celect, a pessoa vai escolher o estado brasileiro. -->
+		<optgroup label="Região Sudeste">
+			<option value="RJ">Rio de Janeiro</option> <!-- value, sera enviado RJ-->
+			<option>São Paulo</option>
+			<option>Minas Gerais</option>
+		</optgroup>
+		<optgroup label="Região Sul">
+			<option value="PR">Paraná</option>
+			<option value="SC">Santa Catarina</option>
+			<option value="RS">Rio Grande do Sul</option>
+		</optgroup>
+		<option>Bahia</option>
+		<option value="SP" selected>Amazonas</option>
+		<option>Acre</option>
+		<option>Distrito Federal</option>
+	</select></p> <!-- a tag select vai criar caixas combinadas -->
+    
+	<p><label for="cCid">Cidade:</label>
+	<input type="text" name="tCid" id="cCid" maxlength="40" size="20" placeholder="Sua Cidade" list="cidades"/></p> <!-- maxlength comprimento maximo, placeholder e o texto que vai aparecer antes de digitar -->
+	<datalist id="cidades"> <!-- cidades dentro do estado do rio de janeiro. --><!-- para fazer a ligação desse datalist com a caixa de texto acima, "estados brasileiros" parametro dentro do objeto input, que e o list --><!-- tipo uma opção altomatica apartir do primeiro caracter informado "alto-complemento" ex: n ... nova iguaçu .. niteroi -->
+		<option value="Rio de Janeiro"></option>
+		<option value="Nova Iguaçu"></option>
+		<option value="Niterói"></option>
+		<option value="Belford Roxo"></option>
+	</datalist>
+</fieldset>
+	
+<fieldset id="mensagem">
+<legend>Mensagem do Usuário</legend>
+    <p><label for="cUrg">Grau de Urgência: </label> 
+	Mín <input type="range" name="tUrg" id="cUrg" min="0" max="10" step="2"/> Máx </p> <!-- range e um objeto que voce pode arrastar da esquerda para direira e vise-versa. tipo uma barra de volume --><!--step define o salto que vai ocorrer entre um valor e outro -->
+    <p><label for="cMsg">Mensagem: </label>
+	<textarea name="tMsg" id="cMsg" cols="35" rows="5" placeholder="Deixe aqui sua mensagem"></textarea></p> <!-- textarea objeto de caixa de texto maior --><!--cols colunas, rows linhas -->
+</fieldset>
+	
+<fieldset id="pedido">	
+<legend>Quero um Google Glass</legend>
+    <p><input type="checkbox" name="tPed" id="cPed" checked/>
+	<label for="cPed">Gostaria de adquirir um Google Glass quando disponível </label></p>
+    <p><label for="cCor">Cor: </label>
+	<input type="color" name="tCor" id="cCor" value="#0000ff"/></p>
+    <p><label for="cQtd">Quantidade: </label>
+	<input type="number" name="tQtd" id="cQtd" min="0" max="5" value="0"/></p>
+    <p><label for="cTot">Preço Total: R$ </label>
+	<input type="text" name="tTot" id="cTot" placeholder="Total a Pagar" readonly/></p> <!-- readonly somente para leitura -->
+</fieldset>
+
+<!-- <input type="submit" value="Enviar"/> -->
+<input type="image" name="tEnviar" src="_imagens/botao-enviar.png"/>
+</form>
+
+		</article>
+</section>
+
+<footer id="rodape">
+    <p>Copyright &copy; 2016 - by Daniel Oliveira <br/>
+        <a href="https://facebook.com/sapupaaa" target="_blank"> Facebook</a> | <a href="https://twitter.com/danielsapup3" target="_blank"> Twitter</a></p>
+</footer>
+</div>
+</body>
+</html>
+
+<!-- alguns parametros de campo de caixa de texto.-->
+<!-- size:  vai dizer o tamanho da caixa de texto em caracteres. -->
+<!-- maxlength: comprimento maximo "para limitar o tamanho do texto a ser digitado na caixa de texto do formulario. -->
+<!-- placeholder: e uma especie de dica que voce da ao usuario de qual vai ser o conteudo dessa caixa. parametro novo no html5-->
+<!-- label: são usados para referenciar objetos ao seus id -->
+<!-- checked: para deixar a bolinha marcado no marcado maisculino ou feminino., -->
+<!-- -->

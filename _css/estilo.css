@@ -1,0 +1,251 @@
+@charset "UTF-8"; /*para evitar problemas de acentuação, tanto pra html como css*/
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web); /*fonte retirada do site, " https://www.google.com/fonts "*/
+@font-face {
+    font-family: 'FonteLogo'; /*nomeando a fonte da pasta, "projeto glass"*/
+    src: url("../_fonts/bubblegum-sans-regular.otf"); /*fonte retirada do arquivo _fonts da pasta "projeto glass"*/
+}
+body
+{
+    font-family: Arial, sans-serif; /*fonte do texto. documento*/
+    background-color: #dddddd; /*cor do fundo do site*/
+    color: rgba(0,0,0,1); /*largura do*/
+}
+div#interface { /*formatar div id interface, delimitar */
+    width: 900px;  /*largura, texto central do site*/
+    background-color: #ffffff; /*interface, fundo branco*/
+    margin: -20px auto 0px auto; /*margem de cima, margem da direira, margem de baixo, margem da esquerda(margem da direita e da esquerda, auto para a margem automatica pelo navegador*/
+    box-shadow: 0px 0px 10px rgba(0,0,0,.5);/* vai criar uma sombra em volta do objeto; config: deslocamento laretal =0px, deslocamento vertical=0px, espalhamento da sombra=1opx; e a cor da sombra, black*/
+    padding: 10px; /*espaço interno do objeto, se o padding for igual para todos os valores...cima, direita, baixo, esquerda, basta informar uma vez que o navegador considera como todos iguais*/
+}
+
+
+p {
+    text-align: justify;
+    text-indent: 50px;
+}
+
+a { /*colocar a cor cinza escuro nos links*/ /*todo tipo de link, vai ter*/
+    color: #606060; /*escura*/
+    text-decoration: none; /*sublinhado, não*/
+}
+a:hover { /*quando passar o mause no link ficat sublinhado*/
+    text-decoration: underline; /*sublinhado, sim*/
+}
+
+
+header#cabecalho img#icone { /*mudar o posicionamento da foto oculos pequeno na tela*/
+    position: absolute; /*posição absoluta*/
+    left: 900px; /**/
+    top: 40px; /**/
+}
+
+header#cabecalho { /*criar uma divisao no cabeçalho*/
+    border-bottom: 1px #606060 solid; /*cria uma linda de borda, borda de cima"top";largura da borda, cor da borda "cinza", formato da borda "solid";*/
+    height: 150px; /*altura do cabeçalho, tamanho altura*/
+    background: url("../_imagens/glass-logo-peq.jpg")no-repeat 0px 80px; /*criar a logo marca no topo do cabeçalho como um background, parameto NO-REPEAT... para que ele não repita o objeto "img", para exibir somente uma imagem; posicão do objeto... primeiro e o deslocamento lateral  0px e o segundo o deslocamento vertical 80px;*/
+}
+
+header#cabecalho h1 { /*objetos do cabeçalho/ */
+    font-family: 'FonteLogo', sans-serif; /*definir fonte de cabeçalho/*/
+    font-size: 30pt; /*tamanho da fonte para 30px*/
+    color: #606060; /*cor cinza escuro*/
+    text-shadow: 1px 1px 1px rgba(0,0,0,.6); /*colocar sombra/1px de deslocamento, 1px de deslocamento vertical, 1px de espalhamento, cor preta */
+    padding: 0px; /**/
+    margin-bottom: 0px; /*utilizar o margin-botton para configurar a margem de baixo/margin-top/do outro objeto configura a margem para cima*/
+}
+
+header#cabecalho h2 {
+    font-family: 'Titillium Web', sans-serif; /*fonte do site google/fonte*/ /*, fonte substituida pela da google.. /font-family: Arial, sans-serif;*/
+    color: #888888; /*cor*/
+    font-size: 15pt; /*tamanho da fonte*/
+    padding: 0px; /*espalhamento interno*//*todo objeto ele tem um padding "espaçamento interno, e o margin "espaçamento externo.*/
+    margin-top: 0px; /*margem-top e a margem de cima, utilizar o margin-botton para configurar a margem de cima,*/
+/*para todas as margem, parâmetro "margin", para uma margem especifica utilize, "margin" top, left, right ou bottom*/
+}
+
+
+
+/* FORMATAÇÃO DE IMAGENS COM LEGENDAS*/
+
+figure.foto-legenda{ /*tudo que for figure de classe: foto-legenda, OBS: sempre que utilizar o parametro class,  nomedatag.nomedaclasse "padrão de referenciar no css"*/
+       position: relative; /*posição relativa, para "figure.foto-legenda figcaption" legenda na posição zero dentro da imagem*/
+       border: 8px solid white; /*borda: largura da borda, tipo de borda, cor da borda;*/
+       box-shadow: 1px 1px 4px black; /*criar-sombra: deslocamento horizontal, deslocamento vertical, espalhamento, cor;*/
+}
+figure.foto-legenda img{ /*tudo que for img*/
+        width: 100%; /*largura*/
+        height: 100%; /*altura*/
+}
+figure.foto-legenda figcaption { /*tudo que for figcaption*/
+        opacity: 0; /*posição absoluta, dentro da "borda branca"*/
+        position: absolute;
+        top: 0px;
+        background-color: rgba(0,0,0,.4); /*camada trasparente* rgba*/
+        color: white; /*cor da letra*/
+        width: 100%; /*largura 100%*/
+        height: 100%; /*altura 100%*/
+        padding: 10px; /*espaço dentro da legenda.*/
+        box-sizing: border-box; /*para resolver problema da borda traspassar, box-sizing: parametro border-box, isso vai criar um box dentro da borda*/
+        transition: opacity 1s; /*efeito de transição. para opacity, e o tempo da transição 1 segundo*/
+
+}
+figure.foto-legenda:hover figcaption{ /*efeito de sobre-posição quando o mouse passar por cima. "hover"*/
+    opacity: 1; /*opacidade de 100%*/
+}
+
+/* FORMATAÇÃO DO MENU*/
+
+nav#menu { /*nav menu, faz o menu flutuar para cima da tela*/
+    display: block; /*fazer com que o navegador menu, seja exibido como um bloco*/
+}
+
+nav#menu ul{ /*faz com que apenas a lista não numerada seja*/
+    list-style: none; /* sumir com as bolinhas: */ /*marcador da lista não ordenada*/
+    text-transform: uppercase; /* todas as letras em maiuculas "uppercase"*/
+    position: absolute; /*faz com que ele passe por cima dos documento, fazer com que apenas a lista não numerada flutue pela tela*/
+    top: -20px; /*movimenta menu para cima*/
+    left: 480px; /*movimenta menu para esquerda da tela*/
+
+}
+nav#menu li{ /*classe de fomatação css para o mesmo nav menu, trasformar items menu vertical para horizontal*/
+    display: inline-block; /*faz com que um bloco seja exibido na mesma linha*/
+    background-color: #dddddd; /*colocar uma cor no fundo, cinza claro; no botao menu*/
+    padding: 10px; /*vai criar um espaço entre eles, verticalmente, menu botao fundo cinza*/
+    margin: 2px; /*vai controlar o espaço fora do botao lateralmente como um spaço*/
+    -webkit-transition: background-color 1s; /*para navegadores antigos, navegador safari*/
+    -moz-transition: background-color 1s; /*para navegadores antigos navegador mozila*/
+    -o-transition: background-color 1s; /*navegador opera*/
+    ms-transition: background-color 1s; /*navegadores da microsoft*/
+    transition: background-color 1s; /*transição, novo parametro css3,vai ficar mudando: o background-color, e o tempo da transição 1 segundo,"no menu principal" */
+}
+
+nav#menu li:hover { /*hover: efeito de passar o mouse por cima: */
+    background-color: #606060; /*quando passar o mouse por cima o background vai mudar a cor. para cinza mais escuro*/
+}
+
+nav#menu h1 { /*  o item menu principal*/
+    display: none;/*esconder item nenu principal*/
+}
+nav#menu a { /*todo nav que tem o id menu e que tenha um link, uma ancora vai ter. */
+    color: #000000; /*cor preta, "fonte do menu*/
+    text-decoration: none; /*tirar o soblinhado do link "menu"*/
+}
+
+nav#menu a:hover { /*link mudar de cor quando tiver ativo com o mouse*/
+    color: #ffffff; /*mudar a cor para branco*/
+    text-decoration: underline; /*siblinhar o link "menu" quando o mouse passar por cima.*/
+}
+section#corpo {  /*corpo principal*/
+    display: block; /*ser mostrada como um bloco*/
+    width: 500px; /*definindo a largura*/
+    float: left; /*flutue, pelo lado esquerdo*/
+    border-right: 1px solid #606060; /*criar uma borda lado direito, indicar 3 parametros a largura, tipo de linha, cor da linha.. cinza*/
+    padding-right: 15px; /*configurar a borda lateral para a direira, o texto não ultrapassar a linha*/
+}
+article#noticia-principal h2 { /*article artigo, que tem o id "noticia-principal"*/
+    font-size: 13pt; /*tamanho da fonte, 12 pontos*/
+    color: #606060; /*cor cinza escuro*/
+    background-color: #dddddd; /*cor do fundo, cinza claro*/
+    padding: 5px 0px 5px 10px; /*espaçamento, cima, direita, baixo, esquerda.*/
+    margin: 10px 0px 10px 0px; /*margem para o titulos, cima, direita, baixo, esquerda.*/
+}
+
+header#cabecalho-artigo h1 { /**/
+    font-family: 'FonteLogo', sans-serif; /*fonte da logomarca "fontelogo"*/
+    font-size: 20pt; /*tamanho da fonte 20 ponto, "fonte grande para o titulo".*/
+    color: #606060; /*cor, cinza escuro.*/
+    margin-bottom: 0px; /*margim de baixo, 0 pixel*/
+    margin-top: 0px; /*margim de cima, 0 pixel*/
+
+}
+
+.direita { /*formatação de classe generica*/
+    text-align: right; /*alinhamento do texto, a direita.*/
+}/*classe generica "direita" que define text-align right;*/
+header#cabecalho-artigo h2 { /**/
+    font-size: 13pt; /*tamanho da fonte 13 pontos.*/
+    color: #cecece; /*cor, cinza bem clarinho*/
+    background-color: #ffffff; /*cor do fundo, branco*/
+    margin-bottom: 0px; /*margem de baixo, 0 pixel.*/
+}
+header#cabecalho-artigo h3 { /**/
+    font-size: 12px; /*tamanho da fonte, 12 pixel*/
+    color: #606060; /*cor de fonte, cinza escuro*/
+}
+
+table#tabelaspec { /*criação da tabela de espicificação do google glass*/
+    border: 1px solid #606060; /*borda "externa", solida, 1pixel, cor cinza*/
+    border-spacing: 0px; /*esse border-spacing vai dar o espaço entre as celulas, tamanho do espaço: 0pixel*/
+    margin-left: auto; /*centralizar a tabela*/
+    margin-right: auto;
+}
+
+table#tabelaspec td{ /*tudo que for td*/
+    border: 1px solid #606060; /*borda de 1 pixel, solida, cor ....*/
+    padding: 10px; /*espaço interno de todos os objetos*//*mais espaço dentro das celulas*/
+    text-align: center; /*existem 2 parametros de alinhamento de tabela, alinhamento do texto "text-align" e*/
+    vertical-align: middle; /*alinhamento vertical, pode ser "top" vai ficar no topo, "bottom", vai alinha a celula na parte de baixo. "middle" vai alinha no centro da celula*/
+
+}
+/*especificaçoes tecnicas, celular da esquerda*/
+table#tabelaspec td.ce { /*essa formatação sera para todas as celulas que estão na esquerda*//*para identificar a classe utiliza-se . "ponto" ex: td.ce*/
+    color: #ffffff; /*cor da fonte*/
+    background-color: #606060; /*a cor do fundo, cinza escuro*/
+    vertical-align: top; /*alinhamento da celula*/
+    font-weight: bold; /*letra em negrito*/
+
+}
+
+/*especificaçoes tecnicas, celular da direita*/
+table#tabelaspec td.cd { /*tabela de especificaçoes*/
+    background-color: #cecece; /*cor de fundo. cinza "discreto" */
+}
+
+table#tabelaspec caption { /*configurar o caption "mar/2013"*/
+    color: #888888; /*cor de fonte*/
+    font-size: 13pt; /**/
+    font-weight: bolder; /*negrito*/
+}
+
+table#tabelaspec caption span { /*tudo que for span vai ter*/
+    display-: block; /*ele vai ser mostrado como um bloco flutuante*/
+    float: right; /*vai ter uma flutuação a direita*/
+    color: #000000; /*fonte preta*/
+    font-size: 8pt; /*tamanho 8pontos*/
+    margin-top: 10px; /*confi margem do topo "mar/2013"*/
+}
+
+aside#lateral { /*barra lateral ou conteudo periferico.*/
+    display: block; /*mostra em bloco*/
+    width: 350px; /*altura*/
+    float: right; /*flutue, pelo lado direito*/
+    background-color: #dddddd; /*cor de fundo*/
+    padding: 10px; /*espaçamento interno 10 pixel*/
+    margin-top: 10px; /*margim de cima 10 pixel*/
+    box-shadow: 2px 2px 2px rgba(0,0,0,.5); /*sombra, deslocamento lateral, deslocamento vertical, espalhamento, cor: preto 50% de trasparencia, alfa*/
+}
+aside#lateral h1 { /*outras noticias vai ficar com a mesma fonte da logo-marca*/
+    font-family: 'FonteLogo', sans-serif; /*fontelogo*/
+    font-size: 20pt; /*tamanho da fonte de 20 pontos.*/
+    color: #606060; /*cor, cinza escuro*/
+    margin-top: 0px; /*margim de cima, 0 pixel*/
+
+}
+
+aside#lateral h2 { /*aside lateral tudo que for h2*/
+    background-color: #606060; /**/
+    font-size: 13pt; /**/
+    color: #ffffff; /*colo car a fonte branca*/
+    padding: 5px; /*espaçamento interno*/
+}
+
+
+footer#rodape { /*configuração do rodape*/
+    clear: both; /*limpa a configuração dos dois lados*/
+    border-top: 1px solid #606060;/*criar uma linha no rodape, top "em cima"borda solida,cor cinza,*/
+
+}
+
+footer#rodape p {
+    text-align: center; /*centralizar o rodape, "nome daniel, facebook twiiter"*/
+}

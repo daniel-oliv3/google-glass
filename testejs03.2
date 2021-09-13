@@ -1,0 +1,22 @@
+<!DOCTYPE html> <!-- documento html-->
+<html lang="pt-br"> <!-- -->
+<head> <!-- cabeçalho do site -->
+    <meta charset="UTF-8"> <!-- charset="utf-8" para acentuação grafica-->
+    <title>Teste Java Script</title> <!-- titulo da pagina-->
+    <script> <!-- passando parametro / codigo javascript-->
+        var quebrada = false; <!-- essa variavel vai servir como base para um maquina de estado, "conseito tecnico avançado" variavel quebrada vai indicar se a lampada estar quebrada ou não. isso vai fazer com que quando ela quebre não realize nenhuma atividade, permanaça quebrada. "lampada". dentro da função muda-lampada.-->
+        function mudaLampada(tipo) { <!-- chamada da função, mudaLampada(nome-parametro "tipo")-->
+			if(!quebrada){ <!-- se,(não-quebrda)faça -->
+				document.getElementById("luz").src = "_imagens/" + tipo + ".jpg"; <!--tipo e o nome do parametro, por isso abrir e fechar aspas dublas em -> "tipo"...  + e concatenação em javascript, juntar uma coisa com a outra -->
+				if(tipo == 'lampada-quebrada'){ <!-- -->
+					quebrada = true; <!-- -->
+				}
+			}
+		}	
+    </script> <!-- fechamento do script-->
+</head> <!-- fechamento da tag head cabeçalho -->
+<body> <!-- corpo do site -->
+    <h1>Acenda a lâmpada</h1> <!-- -->
+    <img src="_imagens/lampada-apagada.jpg" id="luz" onmousemove="mudaLampada('lampada-acesa')" onmouseout="mudaLampada('lampada-apagada')" onclick="mudaLampada('lampada-quebrada')"/> <!-- fazer com com que a função passe parametros para função principal. parametros são valores que podem ser passado do codigo principal para uma determinada função, ela vai reagir conforme os valores passados. -->
+</body> <!-- fechamento do corpo do site -->
+</html> <!-- silplificando o codigo em javascript-->

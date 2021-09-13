@@ -1,0 +1,110 @@
+@charset "utf-8";
+
+ul#album-fotos{ /*formatação do ul de id album-fotos*/
+	width: 700px; /*largura*/
+	margin: 0 auto; /*0 na esquerda e automatica para o restante. "todas as outras"*/
+	padding: 50px; /*espaçamento interno, espaço interno do objeto*/
+	overflow: hidden; /**/
+	list-style: none; /*cada item vai aparecer sem os bullets. marcadores, bolinhas preta */
+}
+
+ul#album-fotos li{ /*configurando dentro do ul, album-fotos o li. */
+	float: left;
+	width: 200px; /*largura*/
+	height: 200px; /*altura*/
+	margin: 10px; /*margim de 10 pixel de fora da caixa [] []*/
+	border: 5px solid #ffffff; /*borda: 5 pixel, solida, cor preta., */
+	background-color: #ffffff; /* dentro de cada foto um background-color branco */
+	box-shadow: 1px 1px 3px rgba(0,0,0,.4); /*efeito de sombra. deslocamento lateral, deslocamento vertical, espalhamento, cor preto, 4% trasparencia canal alfa. rgba*/
+	-webkit-transition: all .4s ease-in;/*monitorar todos os efeitos, o tempo que a transição vai durar, ease-in e a forma do efeito, cresce e amplia de forma suave */
+}	
+
+ul#album-fotos li span{ 
+	opacity: 0; /*para esconder a legenda de dentro da borda quadrada das fotos*/
+	color: #ffffff; /*cor da fonte, branco*/
+	text-shadow: 1px 1px 1px #000000; /*sombra no texto, legenda branca com uma leve sombra preta.*/
+	background-color: rgba(0,0,0,.3); /*trasparencia entre a letra branca e o fundo "foto"*/
+	font-size: 9pt; /*tamanho da fonte.*/
+	line-height: 370px; /*vai fazer com que a legenda desça*/
+	padding: 5px;
+}
+
+ul#album-fotos li:hover{ /*hover para todos os li*/
+	-webkit-transform: scale(1.5); /*vai fazer a imagem ampliar quando o cursor do mouse passar por cima da imagem.*/
+}
+
+ul#album-fotos li:hover span{ /*quando passar o mouse por cima "hover" do li o span vai aparecer*/
+	opacity: 1; /*quando o mouse passar por cima da borda das imagens ela vai mostra a legenda da foto*/
+}
+	
+ul#album-fotos li#foto01{
+	background: url('../_imagens/galeria-01.jpg') no-repeat;
+	background-position: 50% 50%; /*50% na lateral, 50% na vertical, esse background-position vai mudar o posicionamento dessa imagem *//*para centralizar a imagem para poder dar o zoom depois apartir do meio da foto. */
+	background-size: 400px 400px;/*tamanho da imagem de fundo.*//*colocar o tamanho original da imagem.*/
+	background-color: #ffffff;
+}
+
+ul#album-fotos li#foto01:hover{ /*quando passar o mouse sobre a primeira imagem. vai gerar...*/ /*vai reduzir a imagem quando o mouse passar por ela*/
+	background-position: 0px 0px; /*vai voltar a mostra a parte de cima da tela. */
+	background-size: 200px 200px; /*vai voltar a*/ /**/
+}
+
+ul#album-fotos li#foto02{
+	background: url('../_imagens/galeria-02.jpg') no-repeat;
+	background-position: 50% 50%; /*50% na lateral, 50% na vertical, esse background-position vai mudar o posicionamento dessa imagem *//*para centralizar a imagem para poder dar o zoom depois apartir do meio da foto. */
+	background-size: 400px 400px;/*tamanho da imagem de fundo.*//*colocar o tamanho original da imagem.*/
+	background-color: #ffffff;
+}
+
+ul#album-fotos li#foto02:hover{ /*quando passar o mouse sobre a primeira imagem. vai gerar...*/ /*vai reduzir a imagem quando o mouse passar por ela*/
+	background-position: 0px 0px; /*vai voltar a mostra a parte de cima da tela. */
+	background-size: 200px 200px; /*vai voltar a*/ /**/
+}	
+
+ul#album-fotos li#foto03{
+	background: url('../_imagens/galeria-03.jpg') no-repeat;
+	background-position: 50% 50%; /*50% na lateral, 50% na vertical, esse background-position vai mudar o posicionamento dessa imagem *//*para centralizar a imagem para poder dar o zoom depois apartir do meio da foto. */
+	background-size: 400px 400px;/*tamanho da imagem de fundo.*//*colocar o tamanho original da imagem.*/
+	background-color: #ffffff;
+}
+
+ul#album-fotos li#foto03:hover{ /*quando passar o mouse sobre a primeira imagem. vai gerar...*/ /*vai reduzir a imagem quando o mouse passar por ela*/
+	background-position: 0px 0px; /*vai voltar a mostra a parte de cima da tela. */
+	background-size: 200px 200px; /*vai voltar a*/ /**/
+}	
+
+ul#album-fotos li#foto04{
+	background: url('../_imagens/galeria-04.jpg') no-repeat;
+	background-position: 50% 50%; /*50% na lateral, 50% na vertical, esse background-position vai mudar o posicionamento dessa imagem *//*para centralizar a imagem para poder dar o zoom depois apartir do meio da foto. */
+	background-size: 400px 400px;/*tamanho da imagem de fundo.*//*colocar o tamanho original da imagem.*/
+	background-color: #ffffff;
+}
+
+ul#album-fotos li#foto04:hover{ /*quando passar o mouse sobre a primeira imagem. vai gerar...*/ /*vai reduzir a imagem quando o mouse passar por ela*/
+	background-position: 0px 0px; /*vai voltar a mostra a parte de cima da tela. */
+	background-size: 200px 200px; /*vai voltar a*/ /**/
+}	
+
+ul#album-fotos li#foto05{
+	background: url('../_imagens/galeria-05.jpg') no-repeat;
+	background-position: 50% 50%; /*50% na lateral, 50% na vertical, esse background-position vai mudar o posicionamento dessa imagem *//*para centralizar a imagem para poder dar o zoom depois apartir do meio da foto. */
+	background-size: 400px 400px;/*tamanho da imagem de fundo.*//*colocar o tamanho original da imagem.*/
+	background-color: #ffffff;
+}	
+
+ul#album-fotos li#foto05:hover{ /*quando passar o mouse sobre a primeira imagem. vai gerar...*/ /*vai reduzir a imagem quando o mouse passar por ela*/
+	background-position: 0px 0px; /*vai voltar a mostra a parte de cima da tela. */
+	background-size: 200px 200px; /*vai voltar a*/ /**/
+}	
+
+ul#album-fotos li#foto06{
+	background: url('../_imagens/galeria-06.jpg') no-repeat;
+	background-position: 50% 50%; /*50% na lateral, 50% na vertical, esse background-position vai mudar o posicionamento dessa imagem *//*para centralizar a imagem para poder dar o zoom depois apartir do meio da foto. */
+	background-size: 400px 400px;/*tamanho da imagem de fundo.*//*colocar o tamanho original da imagem.*/
+	background-color: #ffffff;
+}
+
+ul#album-fotos li#foto06:hover{ /*quando passar o mouse sobre a primeira imagem. vai gerar...*/ /*vai reduzir a imagem quando o mouse passar por ela*/
+	background-position: 0px 0px; /*vai voltar a mostra a parte de cima da tela. */
+	background-size: 200px 200px; /*vai voltar a*/ /**/
+}	
